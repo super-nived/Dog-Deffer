@@ -1,38 +1,495 @@
-.App {
-  text-align: center;
-}
+/* UltrasonicSound.css */
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+/* Apply the animation to your container */
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.ultrasonic-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  height: 100vh;
+  background: linear-gradient(to bottom, #042941, #2481c0);
+  color: white;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+
+@keyframes changeGradient {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 0% 100%;
+  }
+}
+
+
+/* Navbar styling */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  background: #333;
+  padding: 10px 0;
+  display: flex;
+  align-items: end;
+  z-index: 11;
+}
+
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-left: 5rem;
+}
+
+.navbar ul li {
+  margin-right: 10px;
+}
+
+.navbar a {
+  text-decoration: none;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.navbar .acitve-about-btn{
+  position: absolute;
+  top: calc( 50% - 12px);
+  right:3rem;
+  font-size: 24px; /* Adjust the size as needed */
+  color: #ffffff; /* Adjust the color as needed */
+  animation: pulse 2s infinite;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(52, 152, 219, 0.4);
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(52, 152, 219, 0.4);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(52, 152, 219, 0.4);
+  }
+}
+/* Add this CSS to your stylesheet */
+@keyframes yMovement {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+}
+
+/* Apply animation to the <b> elements */
+b {
+  display: inline-block;
+  animation: yMovement 0.5s ease-in-out forwards;
+}
+
+/* Define animation delays for each letter */
+b:nth-child(1) {
+  animation-delay: 0.1s; /* Adjust the delay for the first letter */
+}
+
+b:nth-child(2) {
+  animation-delay: 0.2s; /* Adjust the delay for the second letter */
+}
+
+b:nth-child(3) {
+  animation-delay: 0.3s; /* Adjust the delay for the third letter */
+}
+
+b:nth-child(4) {
+  animation-delay: 0.4s; /* Adjust the delay for the fourth letter */
+}
+
+b:nth-child(5) {
+  animation-delay: 0.5s; /* Adjust the delay for the fifth letter */
+}
+
+b:nth-child(6) {
+  animation-delay: 0.6s; /* Adjust the delay for the sixth letter */
+}
+
+b:nth-child(7) {
+  animation-delay: 0.7s; /* Adjust the delay for the seventh letter */
+}
+
+b:nth-child(8) {
+  animation-delay: 0.8s; /* Adjust the delay for the eighth letter */
+}
+
+b:nth-child(9) {
+  animation-delay: 0.9s; /* Adjust the delay for the ninth letter */
+}
+
+.content{
+  margin-top: 5rem;
+}
+
+/* stying header Title style  */
+/* Add this CSS to your stylesheet */
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Apply animation to the <h1> element */
+h1 {
+  display: inline-block;
+  white-space: nowrap; /* Prevent line breaks between letters */
+  transition: 0.3s;
+}
+
+/* Define individual animation delays for each letter */
+h1 span:nth-child(1) {
+  animation: slideInFromLeft 0.5s ease 0.1s both ;
+}
+
+h1 span:nth-child(2) {
+  animation: slideInFromLeft 0.5s ease 0.2s both;
+}
+
+h1 span:nth-child(3) {
+  animation: slideInFromLeft 0.5s ease 0.3s both;
+}
+
+h1 span:nth-child(4) {
+  animation: slideInFromLeft 0.5s ease 0.4s both;
+}
+
+h1 span:nth-child(5) {
+  animation: slideInFromLeft 0.5s ease 0.5s both;
+}
+
+h1 span:nth-child(6) {
+  animation: slideInFromLeft 0.5s ease 0.6s both;
+}
+
+h1 span:nth-child(7) {
+  animation: slideInFromLeft 0.5s ease 0.7s both;
+}
+
+h1 span:nth-child(8) {
+  animation: slideInFromLeft 0.5s ease 0.8s both;
+}
+
+h1 span:nth-child(9) {
+  animation: slideInFromLeft 0.5s ease 0.9s both;
+}
+
+h1 span:nth-child(10) {
+  animation: slideInFromLeft 0.5s ease 1s both;
+}
+
+h1 span:nth-child(11) {
+  animation: slideInFromLeft 0.5s ease 1.1s both;
+}
+
+h1 span:nth-child(12) {
+  animation: slideInFromLeft 0.5s ease 1.2s both;
+}
+
+h1 span:nth-child(13) {
+  animation: slideInFromLeft 0.5s ease 1.3s both;
+}
+
+h1 span:nth-child(14) {
+  animation: slideInFromLeft 0.5s ease 1.4s both;
+}
+
+h1 span:nth-child(15) {
+  animation: slideInFromLeft 0.5s ease 1.5s both;
+}
+.sound-indicator-title{
+  height: 3rem;
+  width: auto;
+}
+
+/* Footer styling */
+.footer {
+  background: #333;
+  text-align: center;
+  padding: 10px 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+b{
+  font-weight: 900;
+  font-size: 30px;
+}
+
+/* Shared styles for both buttons */
+.start-button, .close-button {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  padding: 3rem;
+  margin: 3rem 0;
+  font-size: 20px;
+  font-weight: 500;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s; /* Add transition for animations */
+}
+
+/* Style for the Start button */
+.start-button {
+  background: linear-gradient(to bottom, #042941, #2481c0);
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15); /* Add box shadow for a 3D effect */
+}
+
+/* Style for the Close button */
+.close-button {
+  margin: 3rem 0;
+  background: linear-gradient(to bottom, #2481c0, #042941);
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15); /* Add box shadow for a 3D effect */
+}
+
+/* Hover effect */
+.start-button:hover, .close-button:hover {
+  transform: translateY(-5px); /* Lift the button slightly on hover */
+  box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2); /* Enhance the shadow on hover */
+}
+
+/* Add this CSS to your stylesheet */
+
+/* styles.css */
+.wave-container {
+  margin: 1rem 3rem 3rem 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 4rem; /* Center the animation vertically on the viewport */
+  background-color:transparent; /* Background color of the container */
+  overflow: hidden; /* Hide overflowing waves */
+  overflow: hidden;
+}
+
+.wave {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: linear-gradient(to bottom, #042941, #2481c0); /* Linear gradient background */
+  margin: 0 10px; /* Adjust spacing between waves */
+  animation: wave-animation 2s ease-in-out infinite;
+}
+.svg{
+  font-size: 4rem;
+  display: inline-block;
+  position: relative;
+}
+
+
+
+
+@keyframes wave-animation {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+}
+
+/* acive wave */
+.wave-container-active {
+  margin: 1rem 3rem 3rem 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 4rem; /* Center the animation vertically on the viewport */
+  background-color:transparent; /* Background color of the container */
+  overflow: hidden; /* Hide overflowing waves */
+  overflow: hidden;
+}
+
+.wave-active {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: linear-gradient(to bottom, #042941, #2481c0);
+  margin: 0 10px;
+  animation: wave-animation-active 2s ease-in-out infinite;
+  opacity: 0.8;
+  animation-delay: 0s; /* Initial delay before the first wave */
+}
+
+@keyframes wave-animation-active {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px); /* Adjust the wave height as needed */
+  }
+}
+
+/* Apply animation delays to each wave */
+.wave-active:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.wave-active:nth-child(2) {
+  animation-delay: 0.4s; /* Delay the second wave-active by 0.4s */
+}
+
+.wave-active:nth-child(3) {
+  animation-delay: 0.8s; /* Delay the third wave-active by 0.8s */
+}
+
+.wave-active:nth-child(4) {
+  animation-delay: 1.2s; /* Delay the fourth wave-active by 1.2s */
+}
+
+.wave-active:nth-child(5) {
+  animation-delay: 1.6s; /* Delay the fifth wave-active by 1.6s */
+}
+
+.wave-active:nth-child(6) {
+  animation-delay: 2s; /* Delay the sixth wave-active by 2s */
+}
+
+
+
+
+/* Apply animation to the <p> element */
+p {
+  animation: slideInFromTop 0.5s ease-out, slideInFromBottom 0.5s ease-out;
+  animation-fill-mode: both;
+}
+
+
+/* Define the button style when hovered */
+.start-button:hover, .close-button:hover {
+  transform: scale(1.05); /* Add a slight scale-up animation on hover */
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2); /* Enhance the shadow on hover */
+}
+
+/* Define the button style when clicked */
+.start-button:active, .close-button:active {
+  transform: scale(0.95); /* Add a slight scale-down animation when clicked */
+  box-shadow: none; /* Remove the shadow when clicked */
+}
+
+
+
+/* about section */
+
+.about-container{
+  position: relative;
+  background:transparent;
+  height: 100vh;
+  width: 80%;
+  max-width: 0 auto;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  margin-top: 5rem;
+}
+.about-container p{
+  padding: 10px;
+  padding-right: 1rem;
+}
+.about-container::-webkit-scrollbar{
+  display: none;
+}
+
+.about-container .about{
+  width: 100% ;
+  margin:  0 auto;
+  height:fit-content;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+
+  padding-bottom: 4rem;
+}
+
+.about-container .about h4 {
+  color: white;
+  margin-top: 2rem;
+}
+
+.about-container .about ul{
+  list-style-type: square;
+  text-align:start;
+  display:flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 3rem;
+  padding-right: 2rem;
+}
+
+@media screen and (max-width:750px){
+  .about-container {
+    width:100%;
+    padding: 5px;
+  }
+  .navbar ul{
+    margin-left: 0;
   }
 }
